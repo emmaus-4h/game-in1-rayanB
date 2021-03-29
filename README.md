@@ -9,8 +9,17 @@ Gemaakt door:
 
 Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
-- [ ] teken speler, grond, achtergrond, kogel,
-- [ ] laat speler kogel vuren
+- [ ] teken speler, 
+- [ ] teken grond, achtergrond, 
+- [ ] teken tegenstander
+- [ ] beweeg tegenstander
+- [ ] stop spel als tegenstander tegen mij aanloopt
+- [ ] teken kogel
+- [ ] laat speler kogel vuren (met variabele: kogelVliegt)
+- [ ] beweeg kogel
+- [ ] ..
+- [ ] ..
+- [ ] ..
 - [ ] ... *(vul zelf aan)*
 - [ ] punten op scherm zetten
 - [ ] punten kunnen scoren
