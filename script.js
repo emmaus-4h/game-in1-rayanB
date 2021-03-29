@@ -22,14 +22,14 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-var spelerX = 200; // x-positie van speler
-var spelerY = 100; // y-positie van speler
+var spelerX = 600; // x-positie van speler
+var spelerY = 400; // y-positie van speler
 
-var kogelX = 0;    // x-positie van kogel
-var kogelY = 0;    // y-positie van kogel
+var kogelX = 700;    // x-positie van kogel
+var kogelY = 450;    // y-positie van kogel
 
-var vijandX = 0;   // x-positie van vijand
-var vijandY = 0;   // y-positie van vijand
+var vijandX = 1000;   // x-positie van vijand
+var vijandY = 400;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
@@ -42,14 +42,23 @@ var score = 0; // aantal behaalde punten
 /* ********************************************* */
 
 
+
 /**
  * Tekent het speelveld
  */
 var tekenVeld = function () {
-  fill("purple");
-  rect(20, 20, width - 2 * 20, height - 2 * 20);
+  fill("darkblue");
+  rect(0, 0, 1280, 720);
 };
 
+
+/**
+ * Tekent de grond
+ */
+var tekenGrond = function () {
+  fill("green");
+  rect(0, 500, 1280, 220);
+};
 
 /**
  * Tekent de vijand
@@ -57,8 +66,8 @@ var tekenVeld = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function(x, y) {
-    
-
+  fill("red");
+  rect(vijandX, vijandY, 50, 100);
 };
 
 
@@ -68,8 +77,8 @@ var tekenVijand = function(x, y) {
  * @param {number} y y-coördinaat
  */
 var tekenKogel = function(x, y) {
-
-
+  fill("grey");
+  rect(kogelX, kogelY, 40, 25);
 };
 
 
@@ -80,7 +89,7 @@ var tekenKogel = function(x, y) {
  */
 var tekenSpeler = function(x, y) {
   fill("white");
-  ellipse(x, y, 50, 50);
+  rect(spelerX, spelerY, 50, 100);
 };
 
 
@@ -105,6 +114,7 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
+  
 
 };
 
@@ -177,6 +187,7 @@ function draw() {
       }
 
       tekenVeld();
+      tekenGrond();
       tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
