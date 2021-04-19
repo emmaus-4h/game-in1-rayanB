@@ -97,7 +97,7 @@ var tekenSpeler = function(x, y) {
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
 var beweegVijand = function() {
-  vijandX = vijandX - 2
+  vijandX = vijandX - 4
 };
 
 
@@ -135,6 +135,9 @@ var checkVijandGeraakt = function() {
  * @returns {boolean} true als speler is geraakt
  */
 var checkSpelerGeraakt = function() {
+  if(vijandX < 648) {
+    spelStatus = GAMEOVER
+  }
   
   return false;
 };
@@ -145,7 +148,7 @@ var checkSpelerGeraakt = function() {
  * @returns {boolean} true als het spel is afgelopen
  */
 var checkGameOver = function() {
-    
+    checkSpelerGeraakt
   return false;
 };
 
@@ -184,6 +187,7 @@ function draw() {
       if (checkSpelerGeraakt()) {
         // leven eraf of gezondheid verlagen
         // eventueel: nieuwe speler maken
+        spelStatus = GAMEOVER;
       }
 
       tekenVeld();
@@ -192,9 +196,9 @@ function draw() {
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
 
-      if (checkGameOver()) {
-        spelStatus = GAMEOVER;
-      }
+      break;
+      case GAMEOVER:
+      // als spelStatus == GAMEOVER, dan wordt dit uitgevoerd
       break;
   }
 }
