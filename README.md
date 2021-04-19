@@ -9,9 +9,9 @@ Gemaakt door:
 
 Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
-- [ ] teken speler, 
-- [ ] teken grond, achtergrond, 
-- [ ] teken tegenstander
+- [x] teken speler, 
+- [x] teken grond, achtergrond, 
+- [x] teken tegenstander
 - [ ] beweeg tegenstander
 - [ ] stop spel als tegenstander tegen mij aanloopt
 - [ ] teken kogel
