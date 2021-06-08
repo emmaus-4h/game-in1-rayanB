@@ -14,7 +14,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] teken tegenstander
 - [x] beweeg tegenstander
 - [x] stop spel als tegenstander tegen mij aanloopt
-- [ ] teken kogel
+- [x] teken kogel
 - [ ] laat speler kogel vuren (met variabele: kogelVliegt)
 - [ ] beweeg kogel
 - [ ] ..

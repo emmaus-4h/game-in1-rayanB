@@ -105,7 +105,7 @@ var beweegVijand = function() {
  * Updatet globale variabelen met positie van kogel of bal
  */
 var beweegKogel = function() {
-
+  kogelX = kogelX + 10
 };
 
 
