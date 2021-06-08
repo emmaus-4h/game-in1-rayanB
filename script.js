@@ -55,10 +55,20 @@ var tekenVeld = function () {
 /**
  * Tekent de grond
  */
-var tekenGrond = function () {
+var tekenGrass = function () {
   fill("green");
+  rect(0, 500, 1280, 50);
+};
+
+
+/**
+ * Tekent de grond
+ */
+var tekenGrond = function () {
+  fill("maroon");
   rect(0, 500, 1280, 220);
 };
+
 
 /**
  * Tekent de vijand
@@ -192,6 +202,7 @@ function draw() {
 
       tekenVeld();
       tekenGrond();
+      tekenGrass();
       tekenVijand(vijandX, vijandY);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
