@@ -115,7 +115,9 @@ var beweegVijand = function() {
  * Updatet globale variabelen met positie van kogel of bal
  */
 var beweegKogel = function() {
-  kogelX = kogelX + 10
+  if (mouseIsPressed){
+    kogelX = kogelX + 10
+  }
 };
 
 
@@ -204,7 +206,9 @@ function draw() {
       tekenGrond();
       tekenGrass();
       tekenVijand(vijandX, vijandY);
-      tekenKogel(kogelX, kogelY);
+      if (mouseIsPressed){
+        tekenKogel(kogelX, kogelY);
+      }
       tekenSpeler(spelerX, spelerY);
 
       break;
