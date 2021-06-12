@@ -42,6 +42,17 @@ var score = 0; // aantal behaalde punten
 /* ********************************************* */
 
 
+var tekenOver = function () {
+  fill("yellow")
+  rect (0, 0, 1280, 720)
+}
+
+
+var tekenMaan = function () {
+  fill("white");
+  circle(200, 150, 200, 200);
+}
+
 
 /**
  * Tekent het speelveld
@@ -56,8 +67,8 @@ var tekenVeld = function () {
  * Tekent de grond
  */
 var tekenGrass = function () {
-  fill("green");
-  rect(0, 500, 1280, 50);
+  fill(85, 130, 12);
+  rect(0, 500, 1280, 40);
 };
 
 
@@ -65,7 +76,7 @@ var tekenGrass = function () {
  * Tekent de grond
  */
 var tekenGrond = function () {
-  fill("maroon");
+  fill(64, 27, 11);
   rect(0, 500, 1280, 220);
 };
 
@@ -76,8 +87,10 @@ var tekenGrond = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function(x, y) {
-  fill("red");
+  fill(180, 170, 130);
   rect(vijandX, vijandY, 50, 100);
+  fill(84, 163, 80)
+  rect(vijandX, vijandY, 50, 40)
 };
 
 
@@ -100,6 +113,9 @@ var tekenKogel = function(x, y) {
 var tekenSpeler = function(x, y) {
   fill("white");
   rect(spelerX, spelerY, 50, 100);
+  fill(237, 196, 180)
+  rect(spelerX, spelerY, 50, 40);
+  
 };
 
 
@@ -136,7 +152,7 @@ var beweegSpeler = function() {
  * @returns {boolean} true als vijand is geraakt
  */
 var checkVijandGeraakt = function() {
-
+  if(kogelX > vijandX)
   return false;
 };
 
@@ -193,24 +209,28 @@ function draw() {
       
       if (checkVijandGeraakt()) {
         // punten erbij
-        // nieuwe vijand maken
+        // nieuwe vijand 
       }
       
-      if (checkSpelerGeraakt()) {
+      if (checkSpelerGeraakt()){
         // leven eraf of gezondheid verlagen
-        // eventueel: nieuwe speler maken
+        // eventueel: nieuwe speler 
         spelStatus = GAMEOVER;
       }
+      
 
       tekenVeld();
+      if (checkSpelerGeraakt()) {
+        tekenOver();
+      }
+      tekenMaan();
       tekenGrond();
       tekenGrass();
       tekenVijand(vijandX, vijandY);
       if (mouseIsPressed){
         tekenKogel(kogelX, kogelY);
-      }
+      } 
       tekenSpeler(spelerX, spelerY);
-
       break;
       case GAMEOVER:
       // als spelStatus == GAMEOVER, dan wordt dit uitgevoerd
